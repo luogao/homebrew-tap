@@ -16,8 +16,8 @@ cask "hotpot" do
   # 用户不用再手动 xattr（cask 分发自己的签名产物，风险可控）
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "#{appdir}/HotPot.app"],
-        writable_paths: ["#{appdir}/HotPot.app"]
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/HotPot.app"],
+        writable_paths: ["{{appdir}}/HotPot.app"]
   end
 
   caveats <<~EOS
