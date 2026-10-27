@@ -14,10 +14,10 @@ cask "hotpot" do
 
   # ad-hoc 签名的应用带 quarantine 会被 Gatekeeper 拦，装完直接去掉，
   # 用户不用再手动 xattr（cask 分发自己的签名产物，风险可控）
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/HotPot.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "#{appdir}/HotPot.app"],
+        writable_paths: ["#{appdir}/HotPot.app"]
   end
 
   caveats <<~EOS
