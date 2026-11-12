@@ -1,6 +1,6 @@
 cask "sotto" do
-  version "0.1.0"
-  sha256 "cd62afc3f4c72546e25245b08591e6dbf56571e49c8d6bf3f27238c7fa94583f"
+  version "0.1.1"
+  sha256 "2f03ed81f93ba9d64159f788dbca07094fb2e70d4c5925e4b2cddb14272aa1e6"
 
   url "https://github.com/luogao/sotto/releases/download/v#{version}/Sotto-#{version}.dmg"
   name "Sotto"
